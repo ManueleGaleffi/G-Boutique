@@ -1,0 +1,41 @@
+@model List<Cart>
+
+<h1 class="my-4">Shopping Cart</h1>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cartItem in Model)
+            {
+                <tr>
+                    <td>@cartItem.Product.Name</td>
+                    <td>$@cartItem.Product.Price</td>
+                    <td>@cartItem.Quantity</td>
+                    <td>
+                        <form asp-action="RemoveFromCart" asp-route-productId="@cartItem.ProductId">
+                            <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="text-center">
+    @if (Model.Any())
+    {
+        <a class="btn btn-primary btn-lg mb-3" href="@Url.Action("OrderComplete", "Home")">Complete Order</a>
+    }
+</div>
+
+<a href="/Home/Product" class="btn btn-primary btn-lg">Continue Shopping</a>
+

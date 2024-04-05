@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .product-card {
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            border-radius: 10px;
+            height: 300px; /* Altezza fissata per tutte le immagini */
+            object-fit: cover; /* Per mantenere l'aspect ratio */
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            color: blue; /* Cambio del colore del simbolo dello slide */
+        }
+
+        .btn-primary,
+        .btn-dark {
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            font-size: 14px; /* Ridimensiona il testo */
+            background-color: #F2EFEA; /* Cambio colore di sfondo del bottone */
+            border-color: #F2EFEA; /* Cambio colore del bordo del bottone */
+            border-radius: 5px; /* Bordi leggermente arrotondati */
+            padding: 8px 16px; /* Ridimensiona il padding */
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Effetto transizione */
+            text-transform: uppercase; /* Trasformo il testo in maiuscolo */
+            letter-spacing: 1px; /* Spaziatura tra le lettere */
+            color: #333; /* Colore del testo */
+        }
+
+        .btn-primary:hover,
+        .btn-dark:hover {
+            background-color: #D9D5D2; /* Cambio colore di sfondo del bottone al passaggio del mouse */
+            border-color: #D9D5D2; /* Cambio colore del bordo del bottone al passaggio del mouse */
+            color: #333; /* Cambio colore del testo al passaggio del mouse */
+        }
+    </style>
+</head>
+<body>
+    @if (!User.Identity.IsAuthenticated)
+{
+    <!-- Aggiungi un modal per il popup -->
+    <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registrationModalLabel">Registrati</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Per accedere a questa funzionalità, è necessario essere registrati.
+          </div>
+          <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="window.location.href='/Home/Index'">Chiudi</button>
+            <a href="/Account/Register" class="btn btn-primary">Registrati</a>
+          </div>
+        </div>
+      </div>
+    </div>
+}
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>G Boutique</h1>
+                <p class="lead">Scopri l'ultima moda e l'eleganza dei nostri capi di abbigliamento unici.</p>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-6 text-center">
+                <img src="~/images/immagine1.jpg" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h2>La Nostra Storia</h2>
+                <p>
+                    Fondata nel 2000, G Store ha una lunga tradizione nel settore dell'abbigliamento. Siamo orgogliosi di offrire una vasta gamma di capi di abbigliamento che uniscono stile, qualità e comfort. La nostra missione è rendere ogni cliente soddisfatto e sicuro di sé con i nostri prodotti.
+                </p>
+                <p>
+                    Lavoriamo costantemente per rimanere al passo con le ultime tendenze della moda, garantendo che tu possa esprimere la tua personalità attraverso i nostri capi.
+                </p>
+                <button type="button" class="btn btn-dark btn-lg btn-details" data-toggle="modal" data-target="#registrationModal">Scopri la collezione</button>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-12 text-center">
+                <h2>Prodotti più venduti</h2>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <div id="product1" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="~/images/prodotto0.jpg" class="d-block w-100 product-img" alt="Prodotto 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/images/prodotto0-1.jpg" class="d-block w-100 product-img" alt="Prodotto 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/images/prodotto0-2.jpg" class="d-block w-100 product-img" alt="Prodotto 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/images/prodotto0-3.jpg" class="d-block w-100 product-img" alt="Prodotto 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/images/prodotto0-4.jpg" class="d-block w-100 product-img" alt="Prodotto 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/images/prodotto0-5.jpg" class="d-block w-100 product-img" alt="Prodotto 1">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#product1" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#product1" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="card mt-3 product-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Moncler x Palm Angels Genius Piumino</h5>
+                        <p class="card-text">Piumino in velluto millerighe blu con logo Moncler x Palm Angels sul davanti.</p>
+                        <p class="card-text">Prezzo: €995</p>
+                        <button type="button" class="btn btn-primary btn-details" data-toggle="modal" data-target="#registrationModal">Dettagli</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Add another product -->
+            <div class="col-md-4">
+                <div id="product2" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="~/images/prodotto2.png" class="d-block w-100 product-img" alt="Prodotto 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/images/prodotto2-2.png" class="d-block w-100 product-img" alt="Prodotto 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/images/prodotto2-3.png" class="d-block w-100 product-img" alt="Prodotto 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/images/prodotto2-4.png" class="d-block w-100 product-img" alt="Prodotto 2">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#product2" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#product2" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="card mt-3 product-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Felpa Palm Angels</h5>
+                        <p class="card-text">Felpa nera con cappuccio e logo Monogram sul davanti. Sul retro, scritta Palm Angels stampata in bianco.</p>
+                        <p class="card-text">Prezzo: €695</p>
+                        <button type="button" class="btn btn-primary btn-details" data-toggle="modal" data-target="#registrationModal">Dettagli</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Add another product -->
+            <div class="col-md-4">
+                <div id="product3" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="~/images/prodotto 3.jpg" class="d-block w-100 product-img" alt="Prodotto 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/images/prodotto 3-1.jpg" class="d-block w-100 product-img" alt="Prodotto 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/images/prodotto 3-2.jpg" class="d-block w-100 product-img" alt="Prodotto 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/images/prodotto 3-3.jpg" class="d-block w-100 product-img" alt="Prodotto 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/images/prodotto 3-4.jpg" class="d-block w-100 product-img" alt="Prodotto 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="~/images/prodotto 3-5.jpg" class="d-block w-100 product-img" alt="Prodotto 3">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#product3" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#product3" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="card mt-3 product-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Pantaloni da Tuta</h5>
+                        <p class="card-text">Nuova interpretazione di un classico. Pantaloni bianchi con bande laterali e monogram ricamato.</p>
+                        <p class="card-text">Prezzo: €395</p>
+                        <button type="button" class="btn btn-primary btn-details" data-toggle="modal" data-target="#registrationModal">Dettagli</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('.btn-details').click(function(){
+            // Controllo se l'utente è autenticato
+            var authenticated = @User.Identity.IsAuthenticated.ToString().ToLower();
+
+            if (!authenticated) {
+                $('#registrationModal').modal('show'); // Mostra il modale di registrazione se l'utente non è autenticato
+            } else {
+                window.location.href = '/Home/Product'; // Reindirizza l'utente alla pagina dei prodotti
+            }
+        });
+    });
+</script>
+</body>
+</html>

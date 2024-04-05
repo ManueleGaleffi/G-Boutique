@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodotti - Boutique di Vestiti</title>
+    <!-- Collegamento ai fogli di stile CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            border: 1px solid #e0e0e0; /* Contorni dei prodotti */
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            max-width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-info {
+            margin-top: 20px;
+        }
+
+        .product-name {
+            color: #333333;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            color: #000000; /* Colore nero per i prezzi */
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .add-to-cart {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Prodotti</h1>
+        <div class="row">
+            <!-- Prodotto 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="zoom-effect" id="product1">
+                        <img src="~/images/palm1.webp" alt="Prodotto 1" class="img-fluid product-img" id="product-img-1">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">GENIUS PARKA</h3>
+                        <p class="product-price">€1.890</p>
+                        <button class="btn btn-primary add-to-cart" data-product="1">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Prodotto 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="zoom-effect" id="product2">
+                        <img src="~/images/palm2.webp" alt="Prodotto 2" class="img-fluid product-img" id="product-img-2">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">GIACCA SPORTIVA PALME</h3>
+                        <p class="product-price">€595</p>
+                        <button class="btn btn-primary add-to-cart" data-product="2">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Prodotto 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="zoom-effect" id="product3">
+                        <img src="~/images/prodotto0.jpg" alt="Prodotto 3" class="img-fluid product-img" id="product-img-3">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">GENIUS PIUMINO</h3>
+                        <p class="product-price">€1.290</p>
+                        <button class="btn btn-primary add-to-cart" data-product="3">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Prodotto 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="zoom-effect" id="product4">
+                        <img src="~/images/palm20.webp" alt="Prodotto 4" class="img-fluid product-img" id="product-img-4">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">GENIUS GILET IMBOTTITO</h3>
+                        <p class="product-price">€990</p>
+                        <button class="btn btn-primary add-to-cart" data-product="4">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Prodotto 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="zoom-effect" id="product5">
+                        <img src="~/images/palm21.jpg" alt="Prodotto 5" class="img-fluid product-img" id="product-img-5">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">GIACCA-CAMICIA CON LOGO</h3>
+                        <p class="product-price">€845</p>
+                        <button class="btn btn-primary add-to-cart" data-product="5">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Prodotto 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="zoom-effect" id="product6">
+                        <img src="~/images/prodotto2.png" alt="Prodotto 6" class="img-fluid product-img" id="product-img-6">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">FELPA CON CAPPUCCIO FOGGY PA</h3>
+                        <p class="product-price">€495</p>
+                        <button class="btn btn-primary add-to-cart" data-product="6">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Prodotto 7 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="zoom-effect" id="product7">
+                        <img src="~/images/palm23.webp" alt="Prodotto 7" class="img-fluid product-img" id="product-img-7">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">SLIDES CON MONOGRAM</h3>
+                        <p class="product-price">€225</p>
+                        <button class="btn btn-primary add-to-cart" data-product="7">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Prodotto 8 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="zoom-effect" id="product8">
+                        <img src="~/images/palm24.webp" alt="Prodotto 8" class="img-fluid product-img" id="product-img-8">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">T-SHIRT TOKYO </h3>
+                        <p class="product-price">€225</p>
+                        <button class="btn btn-primary add-to-cart" data-product="8">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Prodotto 9 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="zoom-effect" id="product9">
+                        <img src="~/images/palm25.jpg" alt="Prodotto 9" class="img-fluid product-img" id="product-img-9">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">T-SHIRT CLASSICA SHARK</h3>
+                        <p class="product-price">€280</p>
+                        <button class="btn btn-primary add-to-cart" data-product="9">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Prodotto 10 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="zoom-effect" id="product10">
+                        <img src="~/images/palm26.jpg" alt="Prodotto 10" class="img-fluid product-img" id="product-img-10">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">PALM ANGELS MONCLER MAYA</h3>
+                        <p class="product-price">€4500</p>
+                        <button class="btn btn-primary add-to-cart" data-product="10">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Prodotto 11 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="zoom-effect" id="product11">
+                        <img src="~/images/prodotto 3.jpg" alt="Prodotto 11" class="img-fluid product-img" id="product-img-11">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">PANTALONI SPORTIVI CON LOGO</h3>
+                        <p class="product-price">€435</p>
+                        <button class="btn btn-primary add-to-cart" data-product="11">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Prodotto 12 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="zoom-effect" id="product12">
+                        <img src="~/images/palm28.webp" alt="Prodotto 12" class="img-fluid product-img" id="product-img-12">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">FELPA CON CAPPUCCIO CON LOGO</h3>
+                        <p class="product-price">€435</p>
+                        <button class="btn btn-primary add-to-cart" data-product="12">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Prodotto 13 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="zoom-effect" id="product13">
+                        <img src="~/images/palm27.webp" alt="Prodotto 13" class="img-fluid product-img" id="product-img-13">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">PANTALONI CON MONOGRAM</h3>
+                        <p class="product-price">€435</p>
+                        <button class="btn btn-primary add-to-cart" data-product="13">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Prodotto 14 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="zoom-effect" id="product14">
+                        <img src="~/images/palm22.jpg" alt="Prodotto 14" class="img-fluid product-img" id="product-img-14">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">FELPA TIE DYE DICE GAME</h3>
+                        <p class="product-price">€495</p>
+                        <button class="btn btn-primary add-to-cart" data-product="14">Buy</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Prodotto 15 -->
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="zoom-effect" id="product15">
+                        <img src="~/images/palm3.webp" alt="Prodotto 15" class="img-fluid product-img" id="product-img-15">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">CARDIGAN CON LOGO</h3>
+                        <p class="product-price">€690</p>
+                        <button class="btn btn-primary add-to-cart" data-product="15">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Includi jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <!-- Script JavaScript per gestire l'aggiunta al carrello -->
+    <script>
+        $(document).ready(function(){
+            // Funzione per aggiungere il prodotto al carrello
+            $('.add-to-cart').click(function(){
+                var productId = $(this).data('product');
+                $.ajax({
+                    type: 'POST',
+                    url: '/Home/AddToCart',
+                    data: { productId: productId },
+                    success: function(response) {
+                        // Redirect alla pagina del carrello
+                        window.location.href = '/Home/Cart';
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

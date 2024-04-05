@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Order Complete";
+    var orderCompleteMessage = ViewBag.OrderCompleteMessage as string;
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card mt-5">
+                <div class="card-header bg-success text-white">
+                    <h1 class="my-4 text-center">Order Complete</h1>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-success" role="alert">
+                        <p class="lead">Grazie per il suo ordine!</p>
+                        <p>@orderCompleteMessage</p>
+                    </div>
+                    <div class="text-center">
+                        <a href="/Home/Product" class="btn btn-primary">Continue Shopping</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
